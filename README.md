@@ -68,3 +68,50 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+# KEKAPP
+
+Данное приложение будет выполнять функции виртуального кинозала с личным кабинетом и историей просмотров.
+Также планируется добавить возможность оставлять отзывы и оценки просмотренным фильмам.
+Если хорошо пойдет, то и возможность онлайн чата или голосового общения во время кинопросмотра.
+Предыдущая версия SPA приложения была написана на VUE.js 3, но я решил переписать на react. 
+Постараюсь сразу вести бэклог и записывать, что делаю.
+
+## Архитектура приложения:
+
+## Компоненты:
+
+
+
+# BACKLOG:
+
+* [1. Первичная настройка.](#init)
+    * [1.1 Установить библиотеку react](#install_react)
+    * [1.2 Создать проект](#create_project)
+
+
+
+
+
+
+
+
+# TUTORIAL:
+
+<a id ="init"></a>
+
+## 1. Первичная настройка.
+
+<a id="install_react"></a>
+
+### 1.1 Установка react
+
+    sudo npm install -g create-react-app
+
+<a id="create_project"></a>
+
+### 1.2 Создаем проект
+    npx create-react-app kekapp
