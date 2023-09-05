@@ -123,19 +123,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### 1.3 Подключаем к Git
 
 - Проверим есть ли настройки на глобальном уровне:
-git config --list
 
-    Если есть, то ок, если нет, делаем:
+    git config --list
+
+- Если есть, то ок, если нет, делаем:
+
     git config --global user.name your-user-git-name
+
     git config --global user.email your-user_git_email
 
 - Созадаем на сайте репозиторий (в данном случае github.com)
 
 - Соединяем локальный и удаленный:
 
-git remote add origin https://github.com/Pereyro/kekapp.git
-git branch -M master
-git push -u origin master
+    git remote add origin https://github.com/Pereyro/kekapp.git
+
+    git branch -M master
+
+    git push -u origin master
 
 
 <a id="fsd"></a>
@@ -145,12 +150,19 @@ git push -u origin master
 Создадим структуру каталогов согласно концепции [FSD](https://feature-sliced.design/)
 
 /src:
+
     --/app
+
     --/processes
+
     --/pages
+
     --/widgets
+
     --/features
+
     --/entities
+
     --/shared
 
 
