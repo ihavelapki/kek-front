@@ -93,6 +93,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     * [1.2 Создать проект](#create_project)
     * [1.3 Подключить к Git](#git)
     * [1.4 Создать исходную структуру папок](#fsd)
+* [2. Создание первичного роутера](#router)
+    * [2.1 Скачать библиотеку](#)
+    * [2.2 Создать странички](#)
+    * [2.3 Добавить роутер в основной компонент](#)
 
 
 
@@ -105,64 +109,113 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 <a id ="init"></a>
 
-## 1. Первичная настройка.
+## Первичная настройка.
 
 <a id="install_react"></a>
 
-### 1.1 Установка react
+### Установка react
 
     sudo npm install -g create-react-app
 
 <a id="create_project"></a>
 
-### 1.2 Создаем проект
+### Создаем проект
     npx create-react-app kekapp
 
 <a id="git"></a>
 
-### 1.3 Подключаем к Git
+### Подключаем к Git
 
 - Проверим есть ли настройки на глобальном уровне:
-
-    git config --list
+```
+git config --list
+```
 
 - Если есть, то ок, если нет, делаем:
+```
+git config --global user.name your-user-git-name
 
-    git config --global user.name your-user-git-name
-
-    git config --global user.email your-user_git_email
+git config --global user.email your-user_git_email
+```
 
 - Созадаем на сайте репозиторий (в данном случае github.com)
 
 - Соединяем локальный и удаленный:
 
-    git remote add origin https://github.com/Pereyro/kekapp.git
+```bash
+ git remote add origin https://github.com/Pereyro/kekapp.git
 
-    git branch -M master
+git branch -M master
 
-    git push -u origin master
-
+git push -u origin master
+```
 
 <a id="fsd"></a>
 
-### 1.4 Создаем структуру каталогов будущего проекта
+### Создаем структуру каталогов будущего проекта
 
 Создадим структуру каталогов согласно концепции [FSD](https://feature-sliced.design/)
 
+
+```
 /src:
-
     --/app
-
     --/processes
-
     --/pages
-
     --/widgets
-
     --/features
-
     --/entities
-
     --/shared
+```
 
+## Роутер
 
+- Скачиваем библиотеку 
+
+npm install react-router-dom
+
+- Создаем простые странички в папке pages:
+
+```
+    /pages
+        --/About
+            --index.jsx
+        --/Afisha
+            --index.jsx
+```
+
+Вот по такому шаблону:
+
+```js
+import React from 'react';
+
+const Afisha = () => {
+    return (
+        <h1>THIS IS AFISHA PAGE</h1>
+    );
+};
+
+export default Afisha;
+```
+
+- Добавляем в App.js роутер на эти страницы
+
+```js
+import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import About from "../pages/About";
+import Afisha from "../pages/Afisha";
+
+function App() {
+  return ( 
+    <BrowserRouter>
+      <Routes>
+        <Route path="/about" element={<About/> } />
+        <Route path="/afisha" element={<Afisha/> } />
+      </Routes> 
+    </BrowserRouter>
+  );
+}
+
+export default App;
+```
