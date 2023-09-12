@@ -1,8 +1,20 @@
 import React from 'react';
+import '../../shared/styles/pages.css';
 
 const About = () => {
     return (
-        <h1>THIS IS ABOUT PAGE</h1>
+        <div className='wrapper'>
+            <div>
+
+            </div>
+            <div>
+                <h1 className="title">KEK</h1>
+                <p className='main_text'>Манифест КЕКа:</p>
+            </div>
+            <div>
+
+            </div>
+        </div>  
     );
 };
 

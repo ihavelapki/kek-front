@@ -1,0 +1,15 @@
+.film_body {
+    border: 1px solid white;
+    border-radius: 1ch;
+    min-height: 128px;
+    max-width: 800px;
+    display: flex;
+    padding: 4px 4px; 
+}
+
+.film_icon {
+    min-width: 84px;
+    border-radius: 1ch;
+    border: 1px solid white;
+    /* */
+}

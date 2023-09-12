@@ -1,0 +1,54 @@
+.kekbar {
+    /* цвет фона церный */
+    background-color: black;
+    /* высота элемента 48 пикселей */
+    height: 48px;
+
+    padding: 0 16px;
+    width: 100%;
+}
+
+.tets_btn {
+    /* background-color: aqua; */
+    /* border: 3px solid white; */
+    border-bottom: 3px solid black;
+}
+
+.tets_btn:hover {
+    /* background-color: brown; */
+    border-bottom: 3px solid white;
+}
+
+.kekbar_btns {
+    margin-right: auto;
+    padding: 24px;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex; /* Используем flex layout */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.kekbar_link{
+    font-family: Arial, sans-serif; /* Укажите ваш выбранный шрифт */
+    font-size: 16px; /* Размер шрифта */
+    text-decoration: none;
+    padding: 8px 16px;
+    /* background-color: transparent;  */
+    /* Прозрачный фон  */
+    color: goldenrod;
+    /* border: 1px solid transparent;  */
+    /* Прозрачная граница */
+    /* cursor: pointer; */
+    /* outline: none;  */
+    /* Убрать контур фокуса */
+    font-size: medium;
+    font-weight: bold;
+} 
+
+/* .navbar__button:focus {
+    color: gold;
+} */
+
+.kekbar_link:hover {
+    color: rgb(251, 219, 43);
+}
