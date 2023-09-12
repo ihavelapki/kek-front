@@ -1,15 +1,15 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import About from "../pages/About";
-import Afisha from "../pages/Afisha";
+import { BrowserRouter } from 'react-router-dom';
+import Navbar from "../widgets/header";
+import '../shared/styles/app.css';
+import KekRouter from '../shared/router';
 
 function App() {
   return ( 
+    
     <BrowserRouter>
-      <Routes>
-        <Route path="/about" element={<About/> } />
-        <Route path="/afisha" element={<Afisha/> } />
-      </Routes> 
+      <Navbar></Navbar>
+      <KekRouter></KekRouter>
     </BrowserRouter>
   );
 }
