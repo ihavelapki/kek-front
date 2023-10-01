@@ -2,10 +2,11 @@
     /* цвет фона церный */
     background-color: black;
     /* высота элемента 48 пикселей */
-    height: 48px;
-
+    height: 56px;
+    /* border: 2px solid green; */
     padding: 0 16px;
     width: 100%;
+    display: flex;
 }
 
 .tets_btn {
@@ -26,6 +27,7 @@
     height: 100%;
     display: flex; /* Используем flex layout */
     align-items: center; /* Выравнивание по центру по вертикали */
+    /* border: 2px solid yellow; */
 }
 
 .kekbar_link{

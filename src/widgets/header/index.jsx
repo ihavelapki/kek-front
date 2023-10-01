@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import classes from './Navbar.module.css';
+import Search from '../../features/search';
+import Userblock from '../../features/userblock';
 
 const Navbar = () => {
     return (
@@ -10,6 +12,8 @@ const Navbar = () => {
                 <Link className={classes.kekbar_link} to="/afisha">AFISHA</Link>
                 <Link className={classes.kekbar_link} to="/bargrill">BAR&GRILL</Link>
             </div>
+            <Search></Search>
+            <Userblock></Userblock>
         </div>
     );
 };
