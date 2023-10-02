@@ -17,7 +17,7 @@ const Userblock = () => {
                     <Link to="/afisha"><p className="title">user</p></Link>
                     <Link to="/afisha"><p className="title">kek</p></Link>
                     <Link to="/afisha"><p className="title">help</p></Link>
-                    <Link to="/afisha"><p className="title">login</p></Link>
+                    <Link to="/login"><p className="title">login</p></Link>
                 </div>
             </KekModal>
         </div>
