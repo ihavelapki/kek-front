@@ -8,9 +8,7 @@ const AuthProvider = ({children}) => {
     const  login = (email, password) => {
         console.log('email:', email);
         console.log('password:', password)
-        console.log('point 5', isAuthenticated)
         setIsAuthenticated(true);
-        console.log('point 6', isAuthenticated)
     };
 
       const logout = () => {

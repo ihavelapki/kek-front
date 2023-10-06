@@ -1,16 +1,23 @@
 import React from 'react';
-// import classes from './Login.module.css';
 import Login from '../../widgets/auth/Login';
+import { useAuth } from '../../shared/auth';
 
 
 const LoginPage = () => {
+
+    //
+    const { isAuthenticated } = useAuth();
 
     return (
         <div className='wrapper'>
             <div></div>
             <div>
-                <h2 className='title'>PLEASE  LOG IN:</h2>
-                <Login/>
+                {isAuthenticated ? (
+                    <div className='title'>You are logged!</div>
+                    ) : (
+                        <Login/>
+                    )
+                }
             </div>
             <div></div>
         </div>
@@ -18,3 +25,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
