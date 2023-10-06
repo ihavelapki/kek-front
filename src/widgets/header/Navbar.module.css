@@ -1,33 +1,27 @@
+.navbar {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    box-sizing: border-box;
+    /* border: 1px solid yellow; */
+}
+
+
 .kekbar {
-    /* цвет фона церный */
-    background-color: black;
-    /* высота элемента 48 пикселей */
-    height: 56px;
-    /* border: 2px solid green; */
-    padding: 0 16px;
-    width: 100%;
+    background-color: black; /* цвет фона церный */
+    height: 56px; /* высота элемента 48 пикселей */
+    /* border: 2px solid green; граница элемента в 2 пикселя */
+    padding: 0 16px; /* отступ левый правый */
+    width: 100%; /* */
     display: flex;
 }
 
-.tets_btn {
-    /* background-color: aqua; */
-    /* border: 3px solid white; */
-    border-bottom: 3px solid black;
-}
-
-.tets_btn:hover {
-    /* background-color: brown; */
-    border-bottom: 3px solid white;
-}
-
 .kekbar_btns {
+    box-sizing: border-box;
     margin-right: auto;
     padding: 24px;
-    box-sizing: border-box;
     height: 100%;
     display: flex; /* Используем flex layout */
     align-items: center; /* Выравнивание по центру по вертикали */
-    /* border: 2px solid yellow; */
 }
 
 .kekbar_link{
@@ -35,21 +29,10 @@
     font-size: 16px; /* Размер шрифта */
     text-decoration: none;
     padding: 8px 16px;
-    /* background-color: transparent;  */
-    /* Прозрачный фон  */
     color: goldenrod;
-    /* border: 1px solid transparent;  */
-    /* Прозрачная граница */
-    /* cursor: pointer; */
-    /* outline: none;  */
-    /* Убрать контур фокуса */
     font-size: medium;
     font-weight: bold;
 } 
-
-/* .navbar__button:focus {
-    color: gold;
-} */
 
 .kekbar_link:hover {
     color: rgb(251, 219, 43);

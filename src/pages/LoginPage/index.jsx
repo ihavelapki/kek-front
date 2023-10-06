@@ -7,12 +7,12 @@ const LoginPage = () => {
 
     return (
         <div className='wrapper'>
-            <div className='title'>First column</div>
+            <div></div>
             <div>
-                <h2 className='title'>Please Login:</h2>
+                <h2 className='title'>PLEASE  LOG IN:</h2>
                 <Login/>
             </div>
-            <div className='title'>Third column</div>
+            <div></div>
         </div>
     );
 };
