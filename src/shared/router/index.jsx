@@ -7,17 +7,19 @@ import BarGrill from '../../pages/BarGrill';
 import LoginPage from '../../pages/LoginPage';
 import { useAuth } from '../../shared/auth';
 
-const PrivateRoute = ({element}) => {
-  const {isAuthentificated} = useAuth();
-
-  return isAuthentificated ? (
-    element ) : (
-      <Navigate to="/login" />
-  )
-
-}
-
 function KekRouter() {
+
+  const PrivateRoute = ({element}) => {
+    const {isAuthenticated} = useAuth();
+    
+    console.log('private:', isAuthenticated)
+    return isAuthenticated ? (
+      element ) : (
+        <Navigate to="/login" />
+    )
+  
+  };
+
   return ( 
       <Routes>
         <Route path="/about" element={<About/> } />
