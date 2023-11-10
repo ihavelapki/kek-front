@@ -1,0 +1,52 @@
+.usericon {
+    border: 1px solid gray;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: antiquewhite;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+.user__form {
+    /* border: 2px solid blue; */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+    min-width: 160px;
+}
+
+.user_btn {
+    box-sizing: border-box;
+    display: flex;
+    background: transparent;
+    border: 1px solid transparent; /* Прозрачная граница */
+    cursor: pointer;
+    outline: none; /* Убрать контур фокуса */
+    
+}
+
+.user_dialog_list {
+    margin-left: auto;
+    margin-bottom: auto;
+    background: black;
+    border-radius: 12px;
+    min-width: 100px;
+    min-height: 150px;
+    padding: 32px;
+    display: flex;   
+    align-items: left;
+    flex-direction: column;
+    border: 1px solid white;
+    /* flex-grow: 1;  */
+    flex-basis: auto; /*Вертикальный размер зависит от контента*/
+}
+
+
