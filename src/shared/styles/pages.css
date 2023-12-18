@@ -11,6 +11,7 @@
 
 .wrapper > div {
     height: 100%; 
+    display: inline;
     /* border: 2px solid yellow; */
 }
 
