@@ -41,6 +41,17 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+# KEKAPP
+
+Данное приложение будет выполнять функции виртуального кинозала с личным кабинетом и историей просмотров.
+Также планируется добавить возможность оставлять отзывы и оценки просмотренным фильмам.
+Если хорошо пойдет, то и возможность онлайн чата или голосового общения во время кинопросмотра.
+Предыдущая версия SPA приложения была написана на VUE.js 3, но я решил переписать на react. 
+Постараюсь сразу вести бэклог и записывать, что делаю.
+
+## Архитектура приложения:
+
+## Компоненты:
 
 
 
@@ -50,6 +61,8 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 2. Сделать условие на выпадающую форму в залогиненом состоянии и нет
 3. Добавить туда логаут
 4. На логин страницу добавить ссылку на signin
+5. Сделать обращение к серверу со списком фильмов. Добавить обработчик ошибок, если сервер ничего не вернул.
+6.
 
     
 
