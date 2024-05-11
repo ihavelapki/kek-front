@@ -1,0 +1,55 @@
+<mxfile host="Electron" modified="2024-05-11T11:54:51.905Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="AnZqRY9bpRumqKV7MqG-" version="24.2.5" type="device">
+  <diagram name="Page-1" id="CQTMqmhotLIXGbIICjlp">
+    <mxGraphModel dx="2836" dy="1640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6Na6WSQTYFLM5HW6BULB-1" value="NGINX" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="400" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="6Na6WSQTYFLM5HW6BULB-5" value="&lt;h2&gt;FRONT APP (REACT SPA)&lt;/h2&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="6Na6WSQTYFLM5HW6BULB-1" vertex="1">
+          <mxGeometry x="40" y="40" width="320" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-1" value="ALPINE DOCKER CONTAINER" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="480" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="c2y0P8Z5tC4saKPRDHiv-18" value="ALPINE DOCKER CONTAINER" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="400" width="480" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="6Na6WSQTYFLM5HW6BULB-8" value="&lt;h2&gt;Python FastApi+ Gunicorn auth server&lt;/h2&gt;" style="label;whiteSpace=wrap;html=1;align=center;verticalAlign=bottom;spacingLeft=0;spacingBottom=4;imageAlign=center;imageVerticalAlign=top;image=img/clipart/Gear_128x128.png" parent="c2y0P8Z5tC4saKPRDHiv-18" vertex="1">
+          <mxGeometry x="80" y="40" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-2" value="ALPINE DOCKER CONTAINER" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="760" width="480" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-3" value="&lt;h2&gt;Python FastApi+ Gunicorn backend server&lt;/h2&gt;" style="label;whiteSpace=wrap;html=1;align=center;verticalAlign=bottom;spacingLeft=0;spacingBottom=4;imageAlign=center;imageVerticalAlign=top;image=img/clipart/Gear_128x128.png" vertex="1" parent="8XNowELlcEqpQb0UADwL-2">
+          <mxGeometry x="80" y="40" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-6" value="ALPINE DOCKER CONTAINER" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="760" width="480" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="6Na6WSQTYFLM5HW6BULB-9" value="PostgreSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" parent="8XNowELlcEqpQb0UADwL-6" vertex="1">
+          <mxGeometry x="120" y="160" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-4" value="PostgreSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="8XNowELlcEqpQb0UADwL-6">
+          <mxGeometry x="120" y="100" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-5" value="PostgreSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="8XNowELlcEqpQb0UADwL-6">
+          <mxGeometry x="120" y="40" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-8" value="ALPINE DOCKER CONTAINER" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="400" width="480" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-9" value="PostgreSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="8XNowELlcEqpQb0UADwL-8">
+          <mxGeometry x="120" y="160" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-10" value="PostgreSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="8XNowELlcEqpQb0UADwL-8">
+          <mxGeometry x="120" y="100" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8XNowELlcEqpQb0UADwL-11" value="PostgreSQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;gradientColor=#7ea6e0;strokeColor=#6c8ebf;" vertex="1" parent="8XNowELlcEqpQb0UADwL-8">
+          <mxGeometry x="120" y="40" width="240" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
