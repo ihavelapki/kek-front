@@ -17,4 +17,6 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Docker build
-        run: docker build -t kekapp .
+        run: docker build -t kekapp-alpine .
+      - name: docker run
+        run: docker run -d -p 8000:8000 --name kekapp kekapp-alpine
