@@ -27,7 +27,7 @@ COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
 
 # Переключаемся на пользователя kekdemo
-USER nginx
+# USER nginx
 
 # Запускаем nginx
 CMD ["nginx", "-g", "daemon off;"]
