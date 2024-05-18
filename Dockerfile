@@ -1,20 +1,33 @@
 # dockerfile
-FROM alpine:latest
+FROM node:16-alpine AS build
 
-RUN apk add --no-cache nginx nodejs npm
-
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-COPY ./src /app/src
-COPY ./public /app/public
-COPY ./package.json /app/package.json
-COPY ./package-lock.json /app/package-lock.json
+# Копируем package.json и package-lock.json отдельно, чтобы кэширование было эффективнее
+COPY package.json package-lock.json ./
 
-RUN npm i 
+# Устанавливаем зависимости
+RUN npm install
+
+# Копируем все исходные файлы
+COPY ./src ./src
+COPY ./public ./public
+
+# Сборка приложения
 RUN npm run build
 
-RUN cp -r /app/build /usr/share/nginx/html
+# Второй этап: Используем меньший образ для конечного окружения
+FROM nginx:alpine
 
+# Копируем собранные файлы из предыдущего этапа
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Открываем порт 80
 EXPOSE 80
 
+# Переключаемся на пользователя kekdemo
+USER nginx
+
+# Запускаем nginx
 CMD ["nginx", "-g", "daemon off;"]
