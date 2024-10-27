@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  kek-front:
+    container_name: kek-front-container
+    image: kekapp:latest
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
