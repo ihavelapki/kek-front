@@ -1,13 +1,13 @@
 import axios from "axios";
 
-export  async function fetchFilms() {
-    try {
-        const response = await axios.get('http://192.168.1.77:5000');
+export  async function fetchFilm() {
+    // try {
+        const response = await axios.get('http://192.168.1.77:5000/films');
         return response.data;
-    } catch (e) {
-        console.error('Error fetching films', e);
-        throw e;
-    }
+    // } catch (e) {
+    //     console.error('Error fetching films', e);
+    //     throw e;
+    // }
 }
 
 export async function getFilmInfo(id) {

@@ -11,7 +11,7 @@ const AuthProvider = ({children}) => {
         setIsAuthenticated(true);
     };
 
-      const logout = () => {
+    const logout = () => {
         setIsAuthenticated(false);
     };
     

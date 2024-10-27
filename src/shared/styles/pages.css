@@ -1,16 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
 
+.bargrill {
+    /* Добавьте следующие стили */
+    background-image: url('~/public/images/kekfon.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* Растянуть изображение на весь элемент */
+    background-position: center center; /* Позиционирование изображения по центру */
+    height: 100vh; /* Занимать всю высоту экрана */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    /* margin-right: auto; */
+}
+
 .wrapper {
     display: grid; /* колоночное отображение;*/
     grid-template-columns: 1fr 3fr 2fr; /* Количество и относительные размеры колонок: 3 колонки, делящие экран 1:3:2 */
-    background-color: black; /* */
+    background-color: black;
     height: 100%; 
     /* border: 3px solid green; */
     min-height: inherit;
 }
 
 .wrapper > div {
-    height: 100%; 
+    height: 100%;
+    display: inline;
     /* border: 2px solid yellow; */
 }
 
@@ -20,5 +35,7 @@
 }
 
 .main_text {
-    color:blanchedalmond;
+    color:goldenrod;
+    font-size: larger;
+    font-weight: bold;
 }
