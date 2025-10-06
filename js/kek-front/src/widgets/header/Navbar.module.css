@@ -1,0 +1,39 @@
+.navbar {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    box-sizing: border-box;
+    /* border: 1px solid yellow; */
+}
+
+
+.kekbar {
+    background-color: black; /* цвет фона церный */
+    height: 56px; /* высота элемента 48 пикселей */
+    /* border: 2px solid green; граница элемента в 2 пикселя */
+    padding: 0 16px; /* отступ левый правый */
+    width: 100%; /* */
+    display: flex;
+}
+
+.kekbar_btns {
+    box-sizing: border-box;
+    margin-right: auto;
+    padding: 24px;
+    height: 100%;
+    display: flex; /* Используем flex layout */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.kekbar_link{
+    font-family: Arial, sans-serif; /* Укажите ваш выбранный шрифт */
+    font-size: 16px; /* Размер шрифта */
+    text-decoration: none;
+    padding: 8px 16px;
+    color: goldenrod;
+    font-size: medium;
+    font-weight: bold;
+} 
+
+.kekbar_link:hover {
+    color: rgb(251, 219, 43);
+}

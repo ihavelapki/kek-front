@@ -1,0 +1,15 @@
+.loginform {
+    /* padding-left: 24px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    color: darkgoldenrod;
+    border: 1px solid white; 
+    padding: 8px 32px;
+    border-radius: 1ch;
+    background-color: rgb(42, 42, 42); /**/
+    margin-top: 24px;
+    margin-right: auto;
+}
