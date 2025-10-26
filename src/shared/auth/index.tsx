@@ -7,8 +7,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
-
-import type { User } from "../../entities/user/model/types"; // ✅ импортируем тип User из entities
+import { mapSessionResponseToUser } from "../../entities/session/lib/mapSessionToUser";
+import type { User } from "../../entities/user/model/types"; // импортируем тип User из entities
 
 // --- Типы данных --- //
 export interface SessionResponse {
@@ -42,14 +42,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const fetchSession = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await fetch(`${API_BASE}/api/auth/session`, {
-        method: "GET",
-        credentials: "include", // важно: передаем cookie
-      });
+      const res = await fetch("/api/auth/session.json");
+
+      // const res = await fetch(`${API_BASE}/api/auth/session`, {
+      //   method: "GET",
+      //   credentials: "include", // важно: передаем cookie
+      // });
       if (!res.ok) throw new Error(`Session check failed: ${res.status}`);
       const data: SessionResponse = await res.json();
       setIsAuthenticated(data.isAuthenticated);
-      setUser(data.user);
+      setUser(mapSessionResponseToUser(data));
     } catch (err: any) {
       console.error("Session error:", err);
       setIsAuthenticated(false);

@@ -1,0 +1,9 @@
+{
+  "isAuthenticated": true,
+  "user": {
+    "id": "1",
+    "name": "demo",
+    "email": "demo@example.com",
+    "roles": ["admin"]
+  }
+}
