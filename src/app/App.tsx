@@ -3,16 +3,21 @@ import Navbar from "../widgets/header";
 import '../shared/styles/app.css';
 import KekRouter from '../shared/router';
 import { AuthProvider } from '../shared/auth';
+import { AppProvider } from "../shared/context/appContext";
+
 
 function App() {
-  return ( 
+  return (
     <AuthProvider>
-      <BrowserRouter>
-        <Navbar></Navbar>
-        <KekRouter></KekRouter>
-      </BrowserRouter>
+      <AppProvider>
+        <BrowserRouter>
+          <Navbar />
+          <KekRouter />
+        </BrowserRouter>
+      </AppProvider>
     </AuthProvider>
   );
 }
+
 
 export default App;
