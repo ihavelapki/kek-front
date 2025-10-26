@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "../../pages/Home";
 import About from "../../pages/About";
 import Afisha from "../../pages/Afisha";
 import FilmPage from "../../pages/FlimPage";
@@ -15,6 +16,7 @@ import { RequireGuest } from "../../entities/session/ui/RequireGuest";
 const KekRouter: React.FC = () => {
   return (
     <Routes>
+      <Route path="/" element={<Home />} /> 
       <Route path="/about" element={<About />} />
       <Route path="/afisha" element={<RequireAuth><Afisha /></RequireAuth>}/>
       <Route path="/afisha/:id" element={<RequireAuth><FilmPage /></RequireAuth>} />

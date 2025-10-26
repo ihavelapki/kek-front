@@ -1,5 +1,5 @@
 {
-  "isAuthenticated": true,
+  "isAuthenticated": false,
   "user": {
     "id": "1",
     "name": "demo",
