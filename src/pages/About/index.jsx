@@ -3,7 +3,8 @@ import '../../shared/styles/pages.css';
 
 const About = () => {
     return (
-        <div className='bargrill'>
+        <div className="wrapper">
+            <div></div>
             <div>
                 <h1 className="title">KEK</h1>
                 <p className='main_text'>Манифест КЕКа:</p>
@@ -12,6 +13,7 @@ const About = () => {
                 <p className="main_text">3. Коллективное решение - верное решение.</p>
                 <p className="main_text">4. Исторически сложившейся скаральный день для кинопоказа - четверг</p>
             </div>
+            <div></div>
         </div>
     );
 };
