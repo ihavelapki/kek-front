@@ -4,22 +4,13 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState
+  useState,
+  type ReactNode,
 } from "react";
 
-import type { ReactNode } from "react";
+import type { User } from "../../entities/user/model/types"; // ✅ импортируем тип User из entities
 
 // --- Типы данных --- //
-export interface User {
-  id: string;
-  username: string;
-  email?: string;
-  roles?: string[];
-}
-
-
-
-
 export interface SessionResponse {
   isAuthenticated: boolean;
   user?: User;
@@ -30,7 +21,7 @@ interface AuthContextValue {
   user?: User;
   loading: boolean;
   error?: string;
-  login: () => void;     // вызывает редирект на Keycloak через BFF
+  login: () => void; // вызывает редирект на Keycloak через BFF
   logout: () => Promise<void>;
   refreshSession: () => Promise<void>;
 }
@@ -106,7 +97,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
       if (res.ok) {
         const data: SessionResponse = await res.json();
-        setIsAuthenticated(data.isAuthenticated);
+        setIsAuthenticated(true);
         setUser(data.user);
       }
     } catch (err) {
