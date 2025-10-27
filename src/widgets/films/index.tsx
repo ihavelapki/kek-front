@@ -1,15 +1,15 @@
-import Film from "../../entities/film";
+import { Film } from "../../entities/film";
 import type { FilmData } from "../../entities/film";
 
 // Типизация пропсов
 interface FilmsProps {
-  filmList: FilmData[];
+  films: FilmData[];
 }
 
-const Films: React.FC<FilmsProps> = ({ filmList }) => {
+const Films: React.FC<FilmsProps> = ({ films }) => {
   return (
     <div>
-      {filmList.map((film) => (
+      {films.map((film) => (
         <Film film={film} key={film.id} />
       ))}
     </div>

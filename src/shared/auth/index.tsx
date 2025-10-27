@@ -8,48 +8,31 @@ import {
   type ReactNode,
 } from "react";
 import { mapSessionResponseToUser } from "../../entities/session/lib/mapSessionToUser";
-import type { User } from "../../entities/user/model/types"; // импортируем тип User из entities
-
-// --- Типы данных --- //
-export interface SessionResponse {
-  isAuthenticated: boolean;
-  user?: User;
-}
+import { getSession, loginRedirect, logoutRequest } from "../api/auth"; //
+import type { User } from "../../entities/user/model/types";
 
 interface AuthContextValue {
   isAuthenticated: boolean;
   user?: User;
   loading: boolean;
   error?: string;
-  login: () => void; // вызывает редирект на Keycloak через BFF
+  login: () => void;
   logout: () => Promise<void>;
   refreshSession: () => Promise<void>;
 }
 
-// --- Настройки --- //
-const API_BASE = import.meta.env.VITE_API_BASE_URL ?? ""; // например, "https://my-bff.example.com"
-
-// --- Реализация --- //
 const AuthContext = createContext<AuthContextValue | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<User | undefined>(undefined);
+  const [user, setUser] = useState<User | undefined>();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | undefined>(undefined);
+  const [error, setError] = useState<string>();
 
-  // --- Проверка сессии при старте приложения --- //
   const fetchSession = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await fetch("/api/auth/session.json");
-
-      // const res = await fetch(`${API_BASE}/api/auth/session`, {
-      //   method: "GET",
-      //   credentials: "include", // важно: передаем cookie
-      // });
-      if (!res.ok) throw new Error(`Session check failed: ${res.status}`);
-      const data: SessionResponse = await res.json();
+      const data = await getSession();
       setIsAuthenticated(data.isAuthenticated);
       setUser(mapSessionResponseToUser(data));
     } catch (err: any) {
@@ -66,46 +49,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     void fetchSession();
   }, [fetchSession]);
 
-  // --- Логин: просто редирект на Keycloak через BFF --- //
   const login = useCallback(() => {
-    window.location.href = `${API_BASE}/api/auth/login`;
+    loginRedirect();
   }, []);
 
-  // --- Logout --- //
   const logout = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await fetch(`${API_BASE}/api/auth/logout`, {
-        method: "POST",
-        credentials: "include",
-      });
-      if (!res.ok) throw new Error(`Logout failed: ${res.status}`);
+      await logoutRequest();
       setIsAuthenticated(false);
       setUser(undefined);
     } catch (err: any) {
-      console.error("Logout error:", err);
       setError(err?.message ?? "Logout error");
     } finally {
       setLoading(false);
     }
   }, []);
 
-  // --- Обновление сессии --- //
-  const refreshSession = useCallback(async () => {
-    try {
-      const res = await fetch(`${API_BASE}/api/auth/session`, {
-        method: "GET",
-        credentials: "include",
-      });
-      if (res.ok) {
-        const data: SessionResponse = await res.json();
-        setIsAuthenticated(true);
-        setUser(data.user);
-      }
-    } catch (err) {
-      console.warn("Failed to refresh session:", err);
-    }
-  }, []);
+  const refreshSession = useCallback(fetchSession, [fetchSession]);
 
   const value = useMemo<AuthContextValue>(
     () => ({
@@ -123,7 +84,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-// --- Хук для использования контекста --- //
 export function useAuth(): AuthContextValue {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error("useAuth must be used within an AuthProvider");

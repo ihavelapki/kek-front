@@ -1,12 +1,12 @@
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import VideoPlayer from "../../widgets/pleer";
 
 const FilmPage = () => {
-    // const params = useParams()
-    // console.log(params)
+    const params = useParams()
+    console.log(params)
     return (
         <div className="wrapper">
-            {/* <div><h1 className="title"> FILM PAGE {params.id}</h1></div> */}
+            <div><h1 className="title"> FILM PAGE {params.id}</h1></div>
             <div>
                 {/* <VideoPlayer/> */}
             </div>
