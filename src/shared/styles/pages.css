@@ -31,15 +31,15 @@
 
 .title {
     /* font-family: 'Rubik Moonrocks', cursive; */
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
     /* color: goldenrod; */
-    color:aliceblue;
+    color:antiquewhite;
 }
 
 .main_text {
     /* color:goldenrod; */
-    color:aliceblue;
+    color:antiquewhite;
     font-size: larger;
     font-weight: bold;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
 }

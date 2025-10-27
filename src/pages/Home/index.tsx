@@ -23,11 +23,11 @@ const Home: React.FC = () => {
 
   return (
     <div className={classes.home}>
-      <h1 className={classes.title}>Выбери приложение</h1>
+      <h1 className={classes.title}>Ihavelapki presents:</h1>
 
       <div className={classes.blocks}>
         <div className={classes.block} onClick={goCinema}>
-          <h2>🎬 Cinemahall</h2>
+          <h2>🎬 Kek</h2>
           <p>Онлайн-кинотеатр и расписание фильмов</p>
         </div>
 

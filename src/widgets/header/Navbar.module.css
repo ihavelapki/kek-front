@@ -29,11 +29,13 @@
     font-size: 16px; /* Размер шрифта */
     text-decoration: none;
     padding: 8px 16px;
-    color: goldenrod;
+    /* color: goldenrod; */
+    color:antiquewhite;
     font-size: medium;
     font-weight: bold;
 } 
 
 .kekbar_link:hover {
-    color: rgb(251, 219, 43);
+    /* color: rgb(251, 219, 43); */
+    color:antiquewhite;
 }
