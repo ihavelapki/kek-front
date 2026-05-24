@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
-import classes from "./Navbar.module.css";
+import { NavLink } from "react-router-dom";
+
 import Search from "../../features/search";
 import Userblock from "../../features/userblock";
 import { useSession } from "../../entities/session/model/useSession";
 import { useAppContext } from "../../shared/context/appContext";
 
+import classes from "./Navbar.module.css";
 
+const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+  isActive
+    ? `${classes.kekbar_link} ${classes.active}`
+    : classes.kekbar_link;
 
 const Navbar: React.FC = () => {
   const { isAuthenticated } = useSession();
@@ -13,55 +18,67 @@ const Navbar: React.FC = () => {
 
   if (currentApp === "home") {
     return (
-      <div className={classes.navbar}>
+      <header className={classes.navbar}>
         <div className={classes.kekbar}>
           <Userblock />
         </div>
-      </div>
+      </header>
     );
   }
 
   if (currentApp === "radio") {
     return (
-      <div className={classes.navbar}>
+      <header className={classes.navbar}>
         <div className={classes.kekbar}>
-          <div className={classes.kekbar_btns}>
-            <Link className={classes.kekbar_link} to="/">Home</Link>
-            <Link className={classes.kekbar_link} to="/radio">Radio</Link>
-            <Link className={classes.kekbar_link} to="/radio/about">About</Link>
-          </div>
+          <nav className={classes.kekbar_btns}>
+            <NavLink className={getNavLinkClass} to="/">
+              Home
+            </NavLink>
+            <NavLink className={getNavLinkClass} to="/radio">
+              Radio
+            </NavLink>
+            <NavLink className={getNavLinkClass} to="/radio/about">
+              About
+            </NavLink>
+          </nav>
+
           <Userblock />
         </div>
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={classes.navbar}>
-      {isAuthenticated ? (
-        <div className={classes.kekbar}>
-          <div className={classes.kekbar_btns}>
-            <Link className={classes.kekbar_link} to="/">Home</Link>
-            <Link className={classes.kekbar_link} to="/cinema/about">About</Link>
-            <Link className={classes.kekbar_link} to="/cinema/afisha">Afisha</Link>
-            <Link className={classes.kekbar_link} to="/cinema/bargrill">Bar&Grill</Link>
-          </div>
-          <Search />
-          <Userblock />
-        </div>
-      ) : (
-        <div className={classes.kekbar}>
-          <div className={classes.kekbar_btns}>
-            <Link className={classes.kekbar_link} to="/">Home</Link>
-            <Link className={classes.kekbar_link} to="/cinema/about">About</Link>         
-          </div>
-          <Userblock />
-        </div>
-      )}
-    </div>
+    <header className={classes.navbar}>
+      <div className={classes.kekbar}>
+        <nav className={classes.kekbar_btns}>
+          <NavLink className={getNavLinkClass} to="/">
+            Home
+          </NavLink>
+
+          <NavLink className={getNavLinkClass} to="/cinema/about">
+            About
+          </NavLink>
+
+          {isAuthenticated && (
+            <>
+              <NavLink className={getNavLinkClass} to="/cinema/afisha">
+                Afisha
+              </NavLink>
+
+              <NavLink className={getNavLinkClass} to="/cinema/bargrill">
+                Bar&Grill
+              </NavLink>
+            </>
+          )}
+        </nav>
+
+        {isAuthenticated && <Search />}
+
+        <Userblock />
+      </div>
+    </header>
   );
 };
-
-
 
 export default Navbar;

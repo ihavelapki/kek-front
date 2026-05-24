@@ -1,41 +1,72 @@
 .navbar {
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-    box-sizing: border-box;
-    /* border: 1px solid yellow; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background-color: var(--color-surface);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-
 .kekbar {
-    background-color: black; /* цвет фона церный */
-    height: 56px; /* высота элемента 48 пикселей */
-    /* border: 2px solid green; граница элемента в 2 пикселя */
-    padding: 0 16px; /* отступ левый правый */
-    width: 100%; /* */
-    display: flex;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  height: var(--header-height);
+
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .kekbar_btns {
-    box-sizing: border-box;
-    margin-right: auto;
-    padding: 24px;
-    height: 100%;
-    display: flex; /* Используем flex layout */
-    align-items: center; /* Выравнивание по центру по вертикали */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-right: auto;
 }
 
-.kekbar_link{
-    font-family: Arial, sans-serif; /* Укажите ваш выбранный шрифт */
-    font-size: 16px; /* Размер шрифта */
-    text-decoration: none;
-    padding: 8px 16px;
-    /* color: goldenrod; */
-    color:antiquewhite;
-    font-size: medium;
-    font-weight: bold;
-} 
+.kekbar_link {
+  display: flex;
+  align-items: center;
+
+  height: 40px;
+  padding: 0 14px;
+
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+
+  text-decoration: none;
+  color: var(--color-text);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+}
 
 .kekbar_link:hover {
-    /* color: rgb(251, 219, 43); */
-    color:antiquewhite;
+  background-color: rgba(212, 175, 55, 0.15);
+
+  color: var(--color-primary);
+}
+
+.kekbar_link:active {
+  transform: translateY(1px);
+}
+
+.active {
+  background-color: rgba(212, 175, 55, 0.2);
+  color: var(--color-primary);
+  border: 1px solid rgba(212, 175, 55, 0.4);
 }

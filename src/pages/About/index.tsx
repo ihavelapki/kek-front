@@ -1,5 +1,3 @@
-import '../../shared/styles/pages.css';
-
 const About = () => {
     return (
         <div className="wrapper">
